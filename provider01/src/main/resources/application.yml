@@ -1,0 +1,3 @@
+spring:   #这个文件可有可无
+   application:
+      name: MICROSERVICECLOUD-DEPT                                            #当有两个服务作为集群使用时，必须使用同一个服务名

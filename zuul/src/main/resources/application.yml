@@ -1,0 +1,26 @@
+server: 
+  port: 9527
+ 
+spring: 
+  application:
+    name: zuul-gateway
+ 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true 
+
+
+zuul:
+  #ignored-services: 配置需要隐藏的微服务名，配置后通过这个微服务名访问就失效了
+  prefix: /bank
+  ignored-services: "*"
+  routes:
+    mydept.serviceId: MICROSERVICECLOUD-DEPT
+    mydept.path: /mydept/**
+ 
+
+
